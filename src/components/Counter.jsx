@@ -8,7 +8,10 @@ const Counter = () => {
     setPause(!pause);
   }
 
-  
+  function handleReset() {
+    setCounter(0);
+    setPause(false);
+  }
 
   useEffect(() => {
     let interval = null;
@@ -31,7 +34,7 @@ const Counter = () => {
         <button className={`button button-${pause ? 'start' : 'pause'}`} onClick={handlePause}>
           {pause ? 'pause' : 'Start'}
         </button>
-       
+       <button className='button ' onClick={handleReset}>Reset</button>
       </div>
     </div>
   );
